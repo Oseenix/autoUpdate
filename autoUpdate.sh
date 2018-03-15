@@ -48,7 +48,7 @@ parse_cfgfile() {
     file_check $1
 
     awk 'BEGIN {FS="[, :]"} /^[^#]/ {if (NF != 5) print "The "NR"th host cfg item is invalid: "$0}' $1
-    awk 'BEGIN {FS="[, :]"} /^[^#]/ {if (NF == 5) {++x;print "host"x"=( "$1,$2,$3,$4,$5" );"}} END {print "host_num="x";"}' $1
+    #awk 'BEGIN {FS="[, :]"} /^[^#]/ {if (NF == 5) {++x;print "host"x"=( "$1,$2,$3,$4,$5" );"}} END {print "host_num="x";"}' $1
     eval $(awk 'BEGIN {FS="[, :]"} /^[^#]/ {if (NF == 5) {++x;print "host"x"=( "$1,$2,$3,$4,$5" );"}}  END {print "host_num="x";"}' $1)
 
     echo "host1:"${host1[@]}
