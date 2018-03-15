@@ -1,0 +1,4 @@
+192.168.0.203:22,root,user_password,/home/test/bonree
+192.168.0.203:22,root,ssh-key-passwd,/home/test/bbb
+# do not need password
+192.168.0.244:22,root,null,/home/test/bbb
